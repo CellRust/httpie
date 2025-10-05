@@ -1,0 +1,15 @@
+[package]
+name = "httpie"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100" # 错误处理
+clap = { version = "4.5.48", features = [
+    "derive",
+] } # 命令行解析                               
+colored = "3.0.0" # 命令终端多彩显示
+jsonxf = "1.1.1" # 美化 JSON 字符串格式
+mime = "0.3" # 处理 mime 类型
+reqwest = { version = "0.12.23", features = ["json"] } # HTTP 客户端
+tokio = { version = "1.47.1", features = ["full"] } # 异步处理库
