@@ -4,7 +4,15 @@ use clap::{Args, Parser, Subcommand};
 use std::str::FromStr;
 
 #[derive(Parser)]
-#[command(version, about, long_about = None)]
+#[command(
+    version, 
+    about, 
+    long_about = None, 
+    after_help = "EXAMPLES:
+    httpie get https://httpbin.org/get               Send a GET request
+    httpie post https://httpbin.org/post             Send a POST request with JSON data
+    httpie post https://httpbin.org/post greeting=hello name=hasono"
+)]
 // 主命令：通过 derive 派生宏派生 Parser Trait 解析命令行内容
 pub struct Httpie {
     // 通过 clap 提供的 command 属性宏为被标记的结构声明子命令字段
